@@ -1,0 +1,14 @@
+name: test secret ssh
+on: [push] # Especifica que el flujo de trabajo se ejecutará cuando haya un push al repositorio.
+jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
+  local-action: # Nombre del trabajo.
+    runs-on: ubuntu-latest # Especifica que el trabajo se ejecutará en un runner con Ubuntu.
+    steps: # Define los pasos que se ejecutarán en
+      - name: ls # Nombre del paso.
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" >> ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 127.0.1.1 >> ~/.ssh/known_hosts
+
+          cat ~/.ssh/known_hosts
