@@ -7,7 +7,7 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
     runs-on: ubuntu-latest # Especifica que el trabajo se ejecutará en un runner con Ubuntu.
     services: # Define los servicios que se utilizarán en el trabajo.
       mysql: # Nombre del servicio.
-        image: mysql:5.7 # Imagen de Docker que se utilizará para el servicio.
+        image: mysql:latest # Imagen de Docker que se utilizará para el servicio.
         ports: # Puertos que se expondrán.
           - 3306:3306
         env: # Variables de entorno para el servicio.
@@ -15,6 +15,10 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
           MYSQL_DATABASE: test_db
           MYSQL_USER: user
           MYSQL_PASSWORD: password
+      redis: # Nombre del servicio.
+        image: redis:latest # Imagen de Docker que se utilizará para el servicio.
+        ports: # Puertos que se expondrán.
+          - 6379:6379    
 
     steps: # Define los pasos que se ejecutarán en el trabajo.  
       - name: ls # Nombre del paso.
