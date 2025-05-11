@@ -11,6 +11,6 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
 
     steps: # Define los pasos que se ejecutarán en el trabajo.  
       - name: test # Nombre del paso.
-        run: echo "Valor: $MY_VAR" # Comando que se ejecutará en el paso.
+        run: echo "Valor $MY_VAR" # Comando que se ejecutará en el paso.
         
     
