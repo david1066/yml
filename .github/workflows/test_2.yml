@@ -14,5 +14,7 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
         env: # Define las variables de entorno que se utilizarán en el paso.
           STEP_MY_VAR: mi variable de entorno # Variable de entorno a nivel de step.
         run: echo "Valor $STEP_MY_VAR" # Comando que se ejecutará en el paso.
+      - name: Variable directametne en git hub # Nombre del paso.
+        run: echo "Valor ${{ vars.MY_VARIABLE_2}}" # Comando que se ejecutará en el paso.
         
     
