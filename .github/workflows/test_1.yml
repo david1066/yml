@@ -15,4 +15,9 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
           MYSQL_DATABASE: test_db
           MYSQL_USER: user
           MYSQL_PASSWORD: password
+
+    steps: # Define los pasos que se ejecutarán en el trabajo.  
+      - name: ls # Nombre del paso.
+        run: ls -la # Comando que se ejecutará en el paso.
+        
     
