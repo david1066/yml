@@ -16,5 +16,7 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
         run: echo "Valor $STEP_MY_VAR" # Comando que se ejecutará en el paso.
       - name: Variable directametne en git hub # Nombre del paso.
         run: echo "Valor ${{ vars.MY_VARIABLE_2}}" # Comando que se ejecutará en el paso.
+      - name : impiriendo secretos # Nombre del paso.
+        run: echo "Valor ${{ secrets.MY_SECRET }}" # Comando que se ejecutará en el paso.  
         
     
