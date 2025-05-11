@@ -11,6 +11,8 @@ jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
 
     steps: # Define los pasos que se ejecutarán en el trabajo.  
       - name: test # Nombre del paso.
-        run: echo "Valor $MY_VAR" # Comando que se ejecutará en el paso.
+        env: # Define las variables de entorno que se utilizarán en el paso.
+          STEP_MY_VAR: mi variable de entorno # Variable de entorno a nivel de step.
+        run: echo "Valor $STEP_MY_VAR" # Comando que se ejecutará en el paso.
         
     
