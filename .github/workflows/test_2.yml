@@ -1,0 +1,16 @@
+name: variables # Define el nombre del flujo de trabajo.
+
+on: [push] # Especifica que el flujo de trabajo se ejecutará cuando haya un push al repositorio.
+
+jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
+  say-hello: # Nombre del trabajo.
+    runs-on: ubuntu-latest # Especifica que el trabajo se ejecutará en un runner con Ubuntu.
+
+    env: # Define las variables de entorno que se utilizarán en el trabajo.
+      MY_VAR: mi variable de entorno # Variable de entorno personalizada.
+
+    steps: # Define los pasos que se ejecutarán en el trabajo.  
+      - name: test # Nombre del paso.
+        run: echo "Valor: $MY_VAR" # Comando que se ejecutará en el paso.
+        
+    
