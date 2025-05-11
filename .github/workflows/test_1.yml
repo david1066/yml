@@ -1,0 +1,18 @@
+name: Ejemplo de Composite Action # Define el nombre del flujo de trabajo.
+
+on: [push] # Especifica que el flujo de trabajo se ejecutará cuando haya un push al repositorio.
+
+jobs: # Define los trabajos que se ejecutarán en este flujo de trabajo.
+  say-hello: # Nombre del trabajo.
+    runs-on: ubuntu-latest # Especifica que el trabajo se ejecutará en un runner con Ubuntu.
+    services: # Define los servicios que se utilizarán en el trabajo.
+      mysql: # Nombre del servicio.
+        image: mysql:5.7 # Imagen de Docker que se utilizará para el servicio.
+        ports: # Puertos que se expondrán.
+          - 3306:3306
+        env: # Variables de entorno para el servicio.
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
+    
